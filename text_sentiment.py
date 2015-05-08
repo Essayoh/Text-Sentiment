@@ -4,10 +4,9 @@ import math
 from string import punctuation
 
 words_used = []
-positive_counter = 0
-negative_counter = 0
-total_words = 0
-page_counter = 1
+positive_counter = float(0)
+negative_counter = float(0)
+total_words = float(0)
 
 pos_words = open('positive.txt').read()
 pos_words = pos_words.split("\n")
@@ -43,6 +42,6 @@ for filename in sys.argv[1:]:
 	print('%d positives, %d negatives, %d words' % (
 		positive_counter, negative_counter, total_words
 	))
-	print('Ouderkirk Sentiment Score: %d' % (
+	print('Ouderkirk Sentiment Score: %.1f' % (
 		total_words / (positive_counter - negative_counter)
 	))
