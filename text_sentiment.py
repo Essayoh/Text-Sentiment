@@ -1,13 +1,8 @@
-import requests
-import bs4
-import shutil
 import os
 import math
-from time import strftime
 from string import punctuation
 import urllib
 
-date = strftime("%Y-%m-%d")
 words_used = []
 positive_counter = 0
 negative_counter = 0
