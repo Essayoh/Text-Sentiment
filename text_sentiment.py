@@ -45,3 +45,9 @@ for filename in sys.argv[1:]:
 	print('Ouderkirk Sentiment Score: %.1f' % (
 		total_words / (positive_counter - negative_counter)
 	))
+
+	# This score may behave better for large documents
+	logistic = 1 / ( 1 + ( negative_counter / positive_counter ) ) # 0 < x < 1
+	print('Alternative score (-1 < x < 1): %.2f' % (
+		2 * logistic - 1
+	))
