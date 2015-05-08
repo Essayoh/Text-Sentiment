@@ -22,7 +22,7 @@ neg_words = open('negative.txt').read()
 neg_words = neg_words.split("\n")
 
 if len(sys.argv) < 2:
-	print "Usage: python text_sentiment.py document.txt"
+	print('Usage: python text_sentiment.py document.txt')
 	sys.exit(1)
 
 for filename in sys.argv[1:]:
@@ -42,7 +42,13 @@ for filename in sys.argv[1:]:
 		else:
 			total_words = total_words+1
 
-	print("")
-	print("File: " + filename)
-	print("Positive Count is " + str(positive_counter) + ", Negative Count is " + str(negative_counter) + ", and the total wordcount is " + str(total_words))
-	print("The Ouderkirk Sentiment Score for this text is: " + str(total_words/(positive_counter - negative_counter)))
+	print('')
+	print('File: %s' % (
+		filename
+	))
+	print('%d positives, %d negatives, %d words' % (
+		positive_counter, negative_counter, total_words
+	))
+	print('Ouderkirk Sentiment Score: %d' % (
+		total_words / (positive_counter - negative_counter)
+	))
