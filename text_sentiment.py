@@ -2,18 +2,12 @@ import sys
 import os
 import math
 from string import punctuation
-import urllib
 
 words_used = []
 positive_counter = 0
 negative_counter = 0
 total_words = 0
 page_counter = 1
-
-download_path='http://www.unc.edu/~ncaren/haphazard/'
-files=['negative.txt','positive.txt']
-for filename in files:
-	urllib.urlretrieve(download_path+filename, filename)
 
 pos_words = open('positive.txt').read()
 pos_words = pos_words.split("\n")
